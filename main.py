@@ -5,9 +5,9 @@ from flet import Row
 from flet import TextField as txtinput
 from flet import ElevatedButton as button
 from flet import Image
-import flet as ft
+from flet import UserControl
 
-class Kelas(ft.UserControl):
+class Kelas(UserControl):
     def __init__(self,i, page) -> None:
         super().__init__()
         self.i = i
@@ -17,22 +17,16 @@ class Kelas(ft.UserControl):
         return self.page.reload()
 
     def build(self):
-        return button(self.txt,on_click=self.kelaspage)
+        return button(self.i,on_click=self.kelaspage)
 
-def main(page: ft.Page):
+
+def main(page: Page):
+    page.add(Kelas("Serangga",page))
     btn = ft.ElevatedButton("Mamalia")
-    page.add(btn)
-
-def main(page: ft.Page):
     btn = ft.ElevatedButton("Reptill")
-    page.add(btn)
-
-def main(page: ft.Page):
     btn = ft.ElevatedButton("Unggas")
-    page.add(btn)
+    page.add(Kelas("Serangga",page))
+    page.add(Kelas("Serangga",page))
+    page.add(Kelas("Serangga",page))
 
-def main(page: ft.Page):
-    btn = ft.ElevatedButton("Serangga")
-    page.add(btn)
-
-ft.app(target=main)
+app(target=main)
