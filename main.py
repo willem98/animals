@@ -19,9 +19,7 @@ class Kelas(UserControl):
         return self.page.reload()
 
     def build(self):
-        print(self.i,self.page)
         return button(self.i,on_click=self.kelaspage)
-
 
 def main(page: Page):
     page.add(Kelas("Serangga",page))
